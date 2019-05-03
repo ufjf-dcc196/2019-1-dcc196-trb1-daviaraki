@@ -10,7 +10,7 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-    String[] planejamentoDisciplinas = new String[]{"Matemática", "Física", "História", "Geografia", "Português", "Filosofia"};
+    String[] planejamentoSemestral = new String[]{"Ano: 2017 Semestre: 1 100% de 40 horas", "Ano: 2017 Semestre: 1 90% de 40 horas","Ano: 2018 Semestre: 1 80% de 40 horas", "Ano: 19 Semestre: 2 40% de 40 horas", "Ano: 19 Semestre: 2 40% de 40 horas"};
     ListView listView;
 
     @Override
@@ -18,9 +18,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listView = (ListView) findViewById(R.id.listaDisciplinas);
+        listView = (ListView) findViewById(R.id.listaSemestres);
 
-        ArrayAdapter<String> discAdapter = new ArrayAdapter<String>(getBaseContext(),android.R.layout.simple_list_item_1, planejamentoDisciplinas);
+        ArrayAdapter<String> discAdapter = new ArrayAdapter<String>(getBaseContext(),android.R.layout.simple_list_item_1, planejamentoSemestral);
 
         listView.setAdapter(discAdapter);
         listView.setOnItemClickListener(this);
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent moveToDisciplinasIntent = new Intent(getBaseContext(),DisciplinasCursadasActivity.class);
-        moveToDisciplinasIntent.putExtra("nomeDisciplina", planejamentoDisciplinas[position]);
+        moveToDisciplinasIntent.putExtra("semestre", planejamentoSemestral[position]);
         startActivity(moveToDisciplinasIntent);
 
     }

@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Trabalho1</string>
     <string name="button">Button</string>
+    <string name="title_activity_detalhes_planejamento">DetalhesPlanejamentoActivity</string>
+    <string name="mudar_planejamento">Mudar Planejamento</string>
+    <string name="adicionar_disciplina">Adicionar Disciplina</string>
 </resources>
